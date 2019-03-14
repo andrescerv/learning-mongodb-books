@@ -74,9 +74,7 @@ Utiliza Postman para probar cada ruta y revisa en MongoDB Compass ó en "Mongo S
 · **Libro**
 ```
     - ID Autor: (Number)
-    - Titulo: (String)
-    - Páginas (Number)
-    - Author: (String)
+    - Nombre: (String)
 ```
 
 
