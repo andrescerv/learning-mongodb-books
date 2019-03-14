@@ -80,10 +80,9 @@ Utiliza Postman para probar cada ruta y revisa en MongoDB Compass ó en "Mongo S
 
 ## Iteración 6: Crear los modelos
 
-- Crea una carpeta llamada "models" 
 - Crea el modelo "autor.js".
-- Crea un "schema", incluyendo las propiedades de cada colección. 
-- Finalmente, harás un "export" al modelo, que permite la accessibilidad del mismo.
+- Crea un "schema", incluyendo las propiedades descritas anteriormente.
+- Haz un "export" al modelo, que permite la accessibilidad del mismo.
 
 ## Iteración 7: Crear las rutas para manejar las solicitudes
 
