@@ -55,7 +55,7 @@ $ npm install express mongoose nodemon
 
 |   Route   | HTTP Verb |   Description   |
 |-----------|-----------|-----------------|
-| `/libro` |    GET    | Entrega todos los libros |
+| `/libros` |    GET    | Entrega todos los libros |
 | `/libros/nuevo` |    POST    | Agrega un libro |
 | `/libros/:id` |    GET    | Entrega datos de ese libro |
 | `/libros/:id/editar` |    POST    | Actualiza un libro |
