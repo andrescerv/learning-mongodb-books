@@ -52,7 +52,7 @@ app.post('/libros/nuevo', librosControllers.addBook) //	Agrega un libro
 
 app.get('/libros/:id', librosControllers.findBook) // Entrega los datos del libro solicitado
 
-// app.post('/libros/:id/editar', librosControllers.editBook) // Actualiza un libro
+app.post('/libros/:id/edit', librosControllers.editBook) // Actualiza un libro
 
 // app.post('/libros/:id/borrar', librosControllers.deleteBook) // Borra libro
 
