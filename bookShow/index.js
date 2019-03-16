@@ -49,10 +49,10 @@ app.get('/libros', librosControllers.findAll) // Entrega todos los libros
 
 app.post('/libros/nuevo', librosControllers.addBook) //	Agrega un libro
 
-app.get('/libros/:titulo', function (req, res, next) { // creo que el router no acepta type: Number ni Strings son espacios
-    console.log(req.params.titulo)
-    const titulo = req.params.titulo
-    libroModel.find( {"titulo": titulo}, (err, resFindOne) => {
+app.get('/libros/:_id', function (req, res, next) { // creo que el router no acepta type: Number ni Strings son espacios
+    console.log(req.params._id)
+    const id = req.params._id
+    libroModel.find( {"_id": id}, (err, resFindOne) => {
         if (err) {
             res.json({status: 'error'})
             next()
