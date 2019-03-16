@@ -17,21 +17,37 @@ mongoose.connect('mongodb://localhost:27017/bookShow', { useNewUrlParser: true} 
 const Libro = require('./models/libros')
 
 //1.4 ROUTES
-var myLogger = function (req, res, next) {
-    console.log("Logged")
-    next()
-}
 
-app.use(myLogger)
+// ejercicios de nivelación Express
+// var myLogger = function (req, res, next) {
+//     console.log("Logged")
+//     next()
+// } 
+// app.use(myLogger)
 
+// var requestTime = function (req, res, next) {
+//     req.requestTime = Date.now();
+//     next();
+// }
+// app.use(requestTime);
+
+// app.get('/', (req, res) => {
+//     // res.send('Hello world')
+//     var responseText = 'Hello World!'
+//     responseText += ' Requested at: ' + req.requestTime + ' ' 
+//     res.send(responseText)
+// })
+
+
+//ejercicios de Mike https://github.com/andrescerv/learning-mongodb-books/blob/master/readme.md
+//----------------------------------------------------------------------------------------------
 app.get('/', (req, res) => {
-    // res.json({message:'bienvenido a Book Show'})
-    res.send('Hello world')
+    res.json({message:'bienvenido a Book Show'})
 })
 
 app.get('/libros', librosControllers.findAll) // Entrega todos los libros
 
-// app.post('/libros/nuevo', librosControllers.addBook) //	Agrega un libro
+app.post('/libros/nuevo', librosControllers.addBook) //	Agrega un libro
 
 // app.get('/libros/:id', librosControllers.findBook) // Entrega datos de ese libro
 

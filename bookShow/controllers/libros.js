@@ -13,16 +13,16 @@ function findAll (req, res, next) { // esta función te regresa toda la db
     })
 }
 
-// function addBook (req, res, next) { // esta función agrega un nuevo libro a la DB
-//     const libro = new librosModel(req.body)
-//     libro.save( (err, resAddBook) => {
-//         if ( err ) {
-//             res.json({status: 'error'})
-//             next()
-//         }
-//         res.json({status: 'libro agregado!', libro})
-//     }) 
-// }
+function addBook (req, res, next) { // esta función agrega un nuevo libro a la DB
+    const libro = new librosModel(req.body)
+    libro.save( (err, resAddBook) => {
+        if ( err ) {
+            res.json({status: 'error'})
+            next()
+        }
+        res.json({status: 'libro agregado!', libro}) // mi gran error fue que en Postman, no estaba enviando mi body en formato JSON sino en formato de texto. Me tomó 2-3 horas descubrirlo.
+    }) 
+}
 
 // function findOne (req, res, next) { // esta función te regresa un libro en específico
     // // let data = {
@@ -49,4 +49,4 @@ function findAll (req, res, next) { // esta función te regresa toda la db
 // } 
 
 //3.3 EXPORT
-module.exports = { findAll }
+module.exports = { findAll, addBook }
