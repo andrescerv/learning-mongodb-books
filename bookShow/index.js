@@ -48,13 +48,13 @@ app.get('/', (req, res) => {
 
 app.get('/libros', librosControllers.findAll) // Entrega todos los libros
 
-app.post('/libros/nuevo', librosControllers.addBook) //	Agrega un libro
+app.post('/libros/new', librosControllers.addBook) //	Agrega un libro
 
 app.get('/libros/:id', librosControllers.findBook) // Entrega los datos del libro solicitado
 
 app.post('/libros/:id/edit', librosControllers.editBook) // Actualiza un libro
 
-// app.post('/libros/:id/borrar', librosControllers.deleteBook) // Borra libro
+app.post('/libros/:id/delete', librosControllers.deleteBook) // Borra libro
 
 
 //1.5 LISTENER

@@ -43,9 +43,15 @@ function editBook (req, res, next) {
     })
 }
 
-// function deleteBook (req, res, next) {
-
-// } 
+function deleteBook (req, res, next) {
+    libroModel.deleteOne( {"_id": req.params.id}, (err) => {
+        if (err) {
+            res.json({status: 'error'})
+            next()
+        }
+        res.json({status: 'Book succesfully deleted!'})
+    })
+} 
 
 //3.3 EXPORT
-module.exports = { findAll, addBook, findBook, editBook}
+module.exports = { findAll, addBook, findBook, editBook, deleteBook}

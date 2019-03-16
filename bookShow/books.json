@@ -49,29 +49,6 @@
             "paginas": 10,
             "descripcion": "descripcion buena",
             "__v": 0
-        },
-        {
-            "_id": "5c8c73f97ea1131ed80c4955",
-            "idLibro": 8,
-            "titulo": "El Libro de la Selva",
-            "paginas": 100,
-            "descripcion": "libro infantil",
-            "__v": 0
-        },
-        {
-            "_id": "5c8c7508f8398e1628eca8a6",
-            "idLibro": 9,
-            "titulo": "Trampa mortal",
-            "paginas": 540,
-            "descripcion": "una historia de Jack Reacher",
-            "__v": 0
-        },
-        {
-            "_id": "5c8c7f949ad37d296c2ad426",
-            "idLibro": 10,
-            "titulo": "prueba",
-            "paginas": 541,
-            "descripcion": "el titulo es una palabra en minusculas"
         }
     ]
 }
