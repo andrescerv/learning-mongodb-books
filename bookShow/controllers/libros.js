@@ -32,7 +32,7 @@ function findBook (req, res, next) { // esta función te regresa un libro en esp
     })
 } // me tomó 4 horas en aprender que el router no acepta Numbers ni Strings con espacios
 
-function editBook (req, res, next) {
+function editBook (req, res, next) { // esta función edita un libro 
     const newVals = req.body
     libroModel.update( {"_id": req.params.id}, {idLibro: newVals.idLibro, titulo: newVals.titulo, paginas: newVals.paginas, descripcion: newVals.descripcion}, (err, raw) => {
         if (err) {
@@ -43,7 +43,7 @@ function editBook (req, res, next) {
     })
 }
 
-function deleteBook (req, res, next) {
+function deleteBook (req, res, next) { // esta función borra un libro
     libroModel.deleteOne( {"_id": req.params.id}, (err) => {
         if (err) {
             res.json({status: 'error'})
