@@ -14,7 +14,7 @@ app.use(express.json())
 mongoose.connect('mongodb://localhost:27017/bookShow', { useNewUrlParser: true} )
 
 //1.3 MODELS
-const Libro = require('./models/libros')
+const libroModel = require('./models/libros') // este paso se pasó a controllers.js
 
 //1.4 ROUTES
 
@@ -49,11 +49,21 @@ app.get('/libros', librosControllers.findAll) // Entrega todos los libros
 
 app.post('/libros/nuevo', librosControllers.addBook) //	Agrega un libro
 
-// app.get('/libros/:id', librosControllers.findBook) // Entrega datos de ese libro
+app.get('/libros/:titulo', function (req, res, next) { // creo que el router no acepta type: Number ni Strings son espacios
+    console.log(req.params.titulo)
+    const titulo = req.params.titulo
+    libroModel.find( {"titulo": titulo}, (err, resFindOne) => {
+        if (err) {
+            res.json({status: 'error'})
+            next()
+        }
+        res.send({resFindOne})
+    })
+}) // Entrega los datos del libro solicitado
 
-// app.post('/libros/:id/editar', librosControllers.setBook) // Actualiza un libro
+// app.post('/libros/:id/editar', librosControllers.editBook) // Actualiza un libro
 
-// app.post('/libros/:id/borrar', librosControllers.delBook) // Borra libro
+// app.post('/libros/:id/borrar', librosControllers.deleteBook) // Borra libro
 
 
 //1.5 LISTENER

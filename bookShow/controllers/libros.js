@@ -1,11 +1,9 @@
 //3.1 IMPORTS 
-const librosModel = require('../models/libros') // importa tus modelos
+const libroModel = require('../models/libros') // importando el modelos
 
-//3.2 FUNCTIONS
-// function 
-
+//3.2 FUNCTIONS 
 function findAll (req, res, next) { // esta función te regresa toda la db
-    librosModel.find( {}, (err, resFindAll) => {
+    libroModel.find( {}, (err, resFindAll) => {
         if ( err ){
             next(err)
         } 
@@ -14,7 +12,7 @@ function findAll (req, res, next) { // esta función te regresa toda la db
 }
 
 function addBook (req, res, next) { // esta función agrega un nuevo libro a la DB
-    const libro = new librosModel(req.body)
+    const libro = new libroModel(req.body)
     libro.save( (err, resAddBook) => {
         if ( err ) {
             res.json({status: 'error'})
@@ -24,27 +22,36 @@ function addBook (req, res, next) { // esta función agrega un nuevo libro a la 
     }) 
 }
 
-// function findOne (req, res, next) { // esta función te regresa un libro en específico
-    // // let data = {
-    // //     "query": {
-    // //         "id": req.params.idLibro
-    // //     }
-    // // }
-    // // librosModel.find( {"id": req.params.idLibro}, (err, resFindOne) => {
-    // //     if (err) {
-    // //         res.json({status: 'error'})
-    // //         next(err)
-    // //     }
-    //     res.json()
-    //     next()
-    // // })
+// function findBook (req, res, next) { // esta función te regresa un libro en específico
+//     const id = req.params.idLibro
+//     console.log(id)
+//     libroModel.find( {"idLibro": id}, (err, resFindOne) => {
+//         if (err) {
+//             res.json({status: 'error'})
+//             next()
+//         }
+//         res.json({data: resFindOne})
+//     })
+// }
+        // let data = {
+        //     "query": {
+        //         "id": req.params.idLibro
+        //     }
+        // }
+        // librosModel.find( {"id": req.params.idLibro}, (err, resFindOne) => {
+        //     if (err) {
+        //         res.json({status: 'error'})
+        //         next(err)
+        //     }
+            // res.json()
+            // next()
+        // })
+
+// function editBook (req, res, next) {
+
 // }
 
-// function setOne (req, res, next) {
-
-// }
-
-// function delBook (req, res, next) {
+// function deleteBook (req, res, next) {
 
 // } 
 
