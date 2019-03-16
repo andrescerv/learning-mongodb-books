@@ -19,6 +19,7 @@ const libroModel = require('./models/libros') // este paso se pasó a controller
 //1.4 ROUTES
 
 // ejercicios de nivelación Express
+//--------------------------------------------------------
 // var myLogger = function (req, res, next) {
 //     console.log("Logged")
 //     next()
@@ -42,24 +43,14 @@ const libroModel = require('./models/libros') // este paso se pasó a controller
 //ejercicios de Mike https://github.com/andrescerv/learning-mongodb-books/blob/master/readme.md
 //----------------------------------------------------------------------------------------------
 app.get('/', (req, res) => {
-    res.json({message:'bienvenido a Book Show'})
+    res.json({message:'bienvenido a Book Show!'})
 })
 
 app.get('/libros', librosControllers.findAll) // Entrega todos los libros
 
 app.post('/libros/nuevo', librosControllers.addBook) //	Agrega un libro
 
-app.get('/libros/:_id', function (req, res, next) { // creo que el router no acepta type: Number ni Strings son espacios
-    console.log(req.params._id)
-    const id = req.params._id
-    libroModel.find( {"_id": id}, (err, resFindOne) => {
-        if (err) {
-            res.json({status: 'error'})
-            next()
-        }
-        res.send({resFindOne})
-    })
-}) // Entrega los datos del libro solicitado
+app.get('/libros/:id', librosControllers.findBook) // Entrega los datos del libro solicitado
 
 // app.post('/libros/:id/editar', librosControllers.editBook) // Actualiza un libro
 
