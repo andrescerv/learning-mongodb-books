@@ -24,8 +24,7 @@ const authorsModel = require('../models/authors')
     }
 
     function findAuthor (req, res, next) {
-        const id2 = req.params.id
-        authorsModel.find( {"_id": id2} , (err, resOneAuthor) => {
+        authorsModel.find( {"_id": req.params.id} , (err, resOneAuthor) => {
             if (err) {
                 res('error!')
                 next()
@@ -36,24 +35,28 @@ const authorsModel = require('../models/authors')
 
     function editAuthor (req, res, next) {
         let newVals = req.body
-        let id = req.params.id
-        authorsModel.update( {"_id": id}, {"idAutor": newVals.idAutor, "nombre": newVals.nombre}, (err, raw) => {
+        authorsModel.update( {"_id": req.params.id}, {"idAutor": newVals.idAutor, "nombre": newVals.nombre}, (err, raw) => {
             if (err) {
                 res('error!')
                 next()
             }
-            res.json({message: 'Success! Author updated', newVals})
+            authorsModel.find( {"_id": req.params.id} , (err, resOneAuthor) => {
+                if (err) {
+                    res('error!')
+                    next()
+                }
+                res.json({message: 'Success! Author updated', resOneAuthor})
+            })
         })
     }
 
     function deleteAuthor (req, res, next) {
-       let id = req.params.id
-       authorsModel.remove( {"_id": id}, (err) => {
+       authorsModel.remove( {"_id": req.params.id}, (err) => {
            if (err) {
                res('error!')
                next()
            }
-           res.json({message: 'author deleted succesfully!'})
+           res.json({message: 'Author deleted succesfully!'})
        }) 
     }
 }

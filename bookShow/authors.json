@@ -1,24 +1,29 @@
 [
     {
-        "_id" : "5c8f4194aa8eddd78f607712",
-        "idAutor" : 1,
-        "nombre" : "George RR Martin"
-    },
-    { "_id" : "5c8f4194aa8eddd78f607713",
-         "idAutor" : 2,
-         "nombre" :
-         "John Steinbeck"
+        "_id": "5c8f4194aa8eddd78f607713",
+        "idAutor": 2,
+        "nombre": "John Steinbeck"
     },
     {
-        "_id" : "5c8f4194aa8eddd78f607714",
-        "idAutor" : 3,
-        "nombre" :
-        "Gabriel Garcia Marquez"
+        "_id": "5c8f4194aa8eddd78f607714",
+        "idAutor": 3,
+        "nombre": "Gabriel Garcia Marquez"
     },
     {
-        "_id" : "5c8f4194aa8eddd78f607715",
-        "idAutor" : 4,
-        "nombre" :
-        "Miguel de Cervantes Saavedra"
+        "_id": "5c8f4194aa8eddd78f607715",
+        "idAutor": 4,
+        "nombre": "Miguel de Cervantes Saavedra"
+    },
+    {
+        "_id": "5c8f598f8e660d2a64ee1420",
+        "idAutor": 5,
+        "nombre": "Stan Lee",
+        "__v": 0
+    },
+    {
+        "_id": "5c90090c94b5ef08a0107232",
+        "idAutor": 1,
+        "nombre": "George R.R. Martin",
+        "__v": 0
     }
 ]

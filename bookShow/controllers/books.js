@@ -6,8 +6,8 @@ const booksModel = require('../models/books')
         booksModel.find( {}, (err, dbBooks) => {
             if ( err ){
                 next(err)
-            } 
-                res.json({dbBooks})
+            }
+            res.json({dbBooks})
         })
     }
     
