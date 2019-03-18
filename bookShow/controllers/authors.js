@@ -3,7 +3,13 @@ const authorsModel = require('../models/authors')
 
 {//3.2 FUNCTIONS
     function findAllAuthors (req, res, next) {
-
+        authorsModel.find( {}, (err, dbAuthors) => {
+            if (err) {
+                res( 'error!')
+                next()
+            }
+            res.json( dbAuthors )
+        })
     } 
 
     function addAuthor (req, res, next) {
