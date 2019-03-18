@@ -2,8 +2,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-//2.2 Schema
-const librosSchema = new Schema({
+//2.2 SCHEMA
+const booksSchema = new Schema({
     idLibro: {
         type: Number,
         required: true
@@ -22,5 +22,5 @@ const librosSchema = new Schema({
     }
 })
 
-//2.3 conversión a "model" y 2.4 exportación
-module.exports = mongoose.model( 'libro', librosSchema)
+//2.3 CONVERSION A "MODEL" Y 2.4 EXOPORATCIÓN
+module.exports = mongoose.model( 'libros', booksSchema)
